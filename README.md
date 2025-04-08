@@ -34,9 +34,9 @@ backend/
 
 ```
 1.启动FastAPI Web服务
-cd backend
+cd AAbackend
 uvicorn main:app --reload
-2.打开浏览器，访问http://127.0.0.1:8000
+2.使用vscode live server插件启动index.html，访问http://127.0.0.1:8000
 3.上传图片，进行目标检测
 4.查看结果
 ```
