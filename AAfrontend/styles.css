@@ -1,0 +1,174 @@
+:root {/* 定义全局 CSS 变量，用于主题切换 */
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --primary-color: #007BFF;
+    --secondary-color: #6C757D;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark {/* 暗色模式下的 CSS 变量 */
+    --bg-color: #333;
+    --text-color: #f8f9fa;
+    --primary-color: #66b3ff;
+    --secondary-color: #adb5bd;
+    --card-bg: #444;
+    --shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body {/* 全局样式 */
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {/* 标题样式 */
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.animate-title {/* 标题动画 */
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card {/* 卡片样式 */
+    background-color: var(--card-bg);
+    border: none;
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.animate-btn {/* 按钮动画 */
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.animate-btn:hover {
+    transform: scale(1.05);
+    background-color: darken(var(--primary-color), 10%);
+}
+
+.animate-btn:active {
+    transform: scale(0.95);
+}
+
+.btn-primary {/* 主按钮样式 */
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    border-color: darken(var(--primary-color), 10%);
+}
+
+.btn-success {
+    background-color: #28A745;
+    border-color: #28A745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+.btn-outline-secondary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--card-bg);
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-container h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+/* 图片动画 */
+.animate-image {
+    opacity: 0;
+    transition: opacity 0.5s ease-in, transform 0.3s ease, box-shadow 0.3s ease; /* 添加 transform 和 shadow 过渡 */
+}
+
+.animate-image.visible {
+    opacity: 1;
+}
+
+.animate-image:hover {
+    transform: scale(1.1) translateY(-15px); /* 放大并向上移动 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 增强阴影，模拟悬浮 */
+    
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+.progress {
+    height: 10px;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {/* 响应式调整 */
+    .image-container {
+        width: 100%;
+    }
+}
+#detectionSummary {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s;
+}
+
+#detectionSummary h4 {
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+#summaryText {
+    font-size: 16px;
+    color: var(--text-color);
+}
+#trafficText {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
